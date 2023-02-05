@@ -5,16 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChartJS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 <body>
-    <div>
+    <nav class="navbar" style="background-color: #a4b9c9;">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" style="background-color: #a4b9c9;">
+          <a class="navbar-brand" style="font-size: 30px; font-family: 'Times New Roman', Times, serif;"><img src="img/Logo.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top" ></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="chartjs.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Bootstrap Page</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </nav>
+      <h1 style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Obesidad en el mundo 2022</h1>
+      <div style="height: 1080px;">
         <canvas id="myChart"></canvas>
       </div>
-      
+      <div style="height: 1080px;">
+        <canvas id="myChart2"></canvas>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       
       <script>
         const ctx = document.getElementById('myChart');
+        const ctx2 = document.getElementById('myChart2');
+        
         
       
         new Chart(ctx, {
@@ -47,6 +74,29 @@
                 grid:{
                     color: 'gray'
                 },
+                bar:{
+                    color: 'black'
+                }
+              }
+            }
+          }
+        })
+        new Chart(ctx2, {
+            type: 'pie',
+            data: {
+            labels: ['EE.UU,', 'MEXICO', 'NUEVA ZELANDA', 'HUNGRIA', 'AUSTRALIA', 'REINO UNIDO', 'CANADA', 'CHILE', 'FINLANDIA', 'ALEMANIA'],
+            datasets: [{
+            label: 'PORCENTAJE DE OBESIDAD 2022 %',
+            data: [38.2, 32.4, 30.7, 30, 27.9, 26.9, 25.8, 25.1, 24.8, 23.6],
+            borderColor: 'black',
+            backgroundColor: ['rgb(66,134,244)', 'rgb(255, 153, 102)', 'rgb(102, 255, 102)', 'rgb(102, 0, 102)', 'rgb(204, 0, 0)', 'rgb(255, 255, 0)', 'rgb(255, 51, 153)', 'rgb(153, 102, 51)', 'rgb(255, 102, 0)', 'rgb(0, 102, 0)'],
+        }
+        ]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
                 bar:{
                     color: 'black'
                 }
