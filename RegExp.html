@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="shortcut icon" href="#">
+    <!-- ↓↓↓↓ link para agregar el estilo de bootstrap ↓↓↓↓ -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body> <!-- -->
+    <!-- container es una clase para manejar el contenido de la página y que se vea ordenado
+    y centrado, para ver la diferencia (y la utilidad de eso), se puede borrar la clase 
+    container de este div -->
+    <nav class="navbar" style="background-color: #ff2525bf;">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid" style="background-color: #ff2525bf">
+            <a class="navbar-brand" style="font-size: 30px; font-family: 'Times New Roman', Times, serif;"><img src="img/Logo.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="font-size: large; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; cursor:grab">Bootstrap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chartjs.html" style="font-size: large; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; cursor:grab">ChartJS</a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+    </nav>
+    <div class="container py-4"> <!-- py = padding en el eje Y, osea arriba y abajo -->
+        <header class="pb-3 mb-4 border-bottom"> <!-- pb = padding bottom; mb = margin bottom -->
+            <span class="fs-4">Misael Mota - Matrícula: 172127 - Seguridad de la información</span> <!--fs= font size-->
+            </a>
+        </header>
+
+        <!--rounded se refiere a lo redondeado de los bordes-->
+        <div class="text-light rounded-top-4" style="background-color: rgba(255, 88, 88, 0.695);"> 
+            <div class="container-fluid py-2">
+            <h4><strong>Texto de ejemplo:</strong></h4>
+            </div>
+        </div>
+
+        <div class="p-3 mb-3 bg-gradient text-bg-danger rounded-bottom-4"> <!--bg-dark= background color -> dark -->
+            <div class="container-fluid">
+            <p id="texto">
+                La encuesta de Sigma Dos para EL MUNDO detecta una fuerte subida del PP pero sería aún insuficiente para hacer frente al bloque que configuran desde hace años el Partido Regionalista de Cantabria (PRC) y el PSOE. Los populares serían la fuerza más votada con un 33,4%. Casi 10 puntos más que hace cuatro años. Lo que se traduciría en 12 escaños. <br>
+
+                Su problema es que sólo puede pactar con Vox, que se maneja en cifras de voto entorno al 8% y dos o tres diputados autonómicos. La suma de ambas fuerzasqueda lejos de los 18 escaños que marcan la mayoría absoluta. En la horquilla más favorable de la encuesta están en 15.<br>
+
+                Ciudadanos no puede aportar ningún diputado porque desaparecería del Parlamento de Cantabria con una intención de voto del 1,8%. Sus tres escaños de la pasada legislatura los asume ahora el PP.
+            </p>
+            </div>
+        </div>
+
+        Regex aplicado: 
+        <div class="badge fs-5 text-bg-danger">
+            /\s....[a-zA-Z]\s/g
+        </div>
+        <br><br>
+        Significado:
+        <div class="badge fs-6 text-dark" style="background-color: rgba(255, 88, 88, 0.695);">
+            Palabras de 5 letras (incluyendo espacios) de la a a la z incluyendo mayus y debe de estar entre espacios en blanco.
+        </div>
+
+        <div class="p-3 my-3 bg-danger text-light rounded-4"> <!--bg-danger= fondo rojizo; my = margen en eje Y (arriba y abajo)-->
+            <div class="container-fluid">
+            <p id="palabrasResultado">
+                
+            </p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="RegExp.js"></script>
+    <!-- ↓↓↓↓ link para agregar el JavaScript de bootstrap ↓↓↓↓ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
