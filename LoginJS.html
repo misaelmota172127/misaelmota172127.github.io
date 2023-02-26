@@ -1,0 +1,148 @@
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Proyecto Forms</title>
+        <style>
+            *{
+                font-family:Arial, Helvetica, sans-serif;
+            }
+            h1{
+                text-align: center;
+                background-color: black;
+                color: white;
+                width: 20%;
+                margin-left: 40%; 
+            }
+            h2{
+                margin: 0;
+                font-size: 20px;
+            }
+            form{
+                margin-top: 50px;
+                margin-left: 50%; 
+                transform: translateX(-50%);
+                width: auto;
+                height: auto;
+                padding: 30px;
+            }
+            #nombre{
+                margin-left: 0%;
+                transform: translateX(-50%);
+                background-color: white;
+                color:black;
+                border-radius: 4px;
+                border: 1px solid orange;
+                width: 40%;
+                height: 40px;
+            }
+            #correo, #contrasena{
+                margin-top: 10px;
+                margin-left: 28%; 
+                background-color: white;
+                border-radius: 5px;
+                border: 1px solid aqua;
+                padding:10px;
+                width: 400px;
+            }
+            #btn{
+                background-color: white;
+                color:black;
+                font-size: 18px;
+                margin-top: 50px;
+                margin-left: 50%; 
+                transform: translateX(-50%);
+                border-radius: 28px;
+                padding: 20px;
+                cursor: pointer;
+                font-weight: bold;
+                border: 1;
+                border-color: aqua;
+            }
+            #btn:hover{
+                background-color: aqua;
+                color:white;
+                border: 0;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h1>Iniciar sesion</h1>
+
+        <form action="" name="form1" method="GET">
+
+            <h2>E-MAIL:</h2>
+            <input type="email" name="correo" id="correo">
+            <br>
+            
+            <h2>PASSWORD:</h2>
+            <input type="text" name="contrasena" id="contrasena">
+            <br>
+
+            <input type="submit" id="btn" name="btn" value="Ingresar">
+
+        </form>
+
+        <script>
+
+            //required sirve para poder hacer obligatorio un input, se utiliza en el html
+            var formulario = document.getElementsByName("form1")[0];
+            var boton = document.getElementById("btn");
+
+            var validarCorreo = function(e){
+                if(formulario.correo.value != "admin@hotmail.com"){
+                    alert("Correo invalido!");
+                    e.preventDefault();
+                }
+            }
+
+            var validarContraseña = function(e){
+                if(formulario.contrasena.value != "asdf1234"){
+                    alert("Contraseña invalida!");
+                    e.preventDefault();
+                }
+            }
+            var rellenarCorreo = function(e){
+                if(formulario.correo.value == ""){
+                    alert("Completa el campo nombre!");
+                    e.preventDefault();
+                }
+            }
+
+            var rellenarContraseña = function(e){
+                if(formulario.contrasena.value == ""){
+                    alert("Completa el campo edad!");
+                    e.preventDefault();
+                }
+            }
+
+            var ingresarPagina = function(e){
+                if(formulario.correo.value == "admin@hotmail.com" && formulario.contrasena.value == "asdf1234"){
+                    window.location.href = "index.html"
+                }
+            }
+
+            // document.getElementById("aLink").addEventListener("click", function(e){
+            //     e.preventDefault();
+            //     alert("-Que seas mayor de 12 años (de lo contrario, obligatoriamente tus padres haran tu cuenta y se encargaran de ella)\n -Fuerte amante de los patos\n -Amigable y respetuoso en eventos")
+            // })
+
+            
+
+            var validar = function(e){
+                validarCorreo(e);
+                validarContraseña(e);
+                rellenarCorreo(e);
+                rellenarContraseña(e);
+                ingresarPagina(e);
+            }  
+
+            formulario.addEventListener("submit", validar);
+
+        </script>
+    </body>
+
+</html>
